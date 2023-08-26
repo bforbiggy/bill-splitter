@@ -1,14 +1,14 @@
 <script>
-	import { Bill } from "$lib/bill.js";
-	import Plate from "./components/plate.svelte";
+	import Plates from "./components/Plates.svelte";
+	import Check from "./components/Check.svelte";
 
-	let bill = new Bill();
+	let people = [];
+	let items = [];
 </script>
 
 <div class="main">
-	<div id="plates">
-		<Plate />
-	</div>
+	<Plates {people} />
+	<Check />
 </div>
 
 <style lang="scss">
@@ -21,13 +21,6 @@
 		overflow: hidden;
 
 		background-color: theme.$ash;
-
-		#plates {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			height: 100vh;
-			margin: 50px;
-		}
+		justify-content: space-around;
 	}
 </style>

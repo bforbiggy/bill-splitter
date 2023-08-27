@@ -1,5 +1,5 @@
 <script>
-	import { Person } from "$lib/person.js";
+	import { Person } from "$lib/Person.js";
 	export let people;
 
 	function addPerson() {

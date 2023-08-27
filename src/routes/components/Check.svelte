@@ -1,7 +1,6 @@
 <script>
 </script>
 
-<img alt="" src={notes} />
 <div class="check">
 	<div class="bill">
 		<div class="header row">

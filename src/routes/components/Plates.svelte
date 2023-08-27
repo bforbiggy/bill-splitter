@@ -44,7 +44,6 @@
 		border-radius: 50%;
 
 		position: relative;
-		left: calc(#{$length});
 		margin: 30px;
 		background-color: theme.$azure;
 		font-size: 4em;

@@ -22,5 +22,6 @@
 
 		background-color: theme.$ash;
 		justify-content: space-around;
+		vertical-align: top;
 	}
 </style>

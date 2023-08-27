@@ -23,7 +23,7 @@
 </div>
 
 <style lang="scss">
-	.check {
+	/* .check {
 		.row {
 			display: flex;
 			border-bottom: 2px cornflowerblue solid;
@@ -53,22 +53,5 @@
 				height: 3.5rem;
 			}
 		}
-
-		/* img {
-			height: 70vh;
-			width: auto;
-			object-fit: contain;
-		}
-
-		.text {
-			position: absolute;
-			top: -5vh;
-			left: 20%;
-
-			p {
-				font-size: 5vh;
-				font-family: "RipeApricots", "Courier New", Courier, monospace;
-			}
-		} */
-	}
+	} */
 </style>

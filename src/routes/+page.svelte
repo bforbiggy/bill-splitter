@@ -8,6 +8,7 @@
 
 <div class="main">
 	<Plates {people} />
+	<Check />
 </div>
 
 <style lang="scss">

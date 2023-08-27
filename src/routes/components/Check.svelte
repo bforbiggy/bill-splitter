@@ -23,7 +23,7 @@
 </div>
 
 <style lang="scss">
-	/* .check {
+	.check {
 		.row {
 			display: flex;
 			border-bottom: 2px cornflowerblue solid;
@@ -42,16 +42,14 @@
 			}
 		}
 
-		.header {
-			.left {
-				width: 5rem;
-				height: 3.5rem;
-			}
-
-			.right {
-				width: 21rem;
-				height: 3.5rem;
-			}
+		.header .left {
+			width: 5rem;
+			height: 3.5rem;
 		}
-	} */
+
+		.header .right {
+			width: 21rem;
+			height: 3.5rem;
+		}
+	}
 </style>

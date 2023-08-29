@@ -2,8 +2,6 @@
 	import "./Check.scss";
 	import Item from "$lib/Item.js";
 
-	export let items;
-
 	function addItem() {
 		// Retrieve user input for item
 		const name = prompt("Enter item name:");
@@ -16,6 +14,12 @@
 		items.push(item);
 		items = items;
 	}
+
+	function dragStart(event, itemIndex) {
+		event.dataTransfer.setData("text/plain", itemIndex);
+	}
+
+	export let items;
 </script>
 
 <div class="check">
@@ -29,14 +33,18 @@
 	</div>
 
 	<!-- Bill's items -->
-	{#each items as item}
-		<div class="row">
+	{#each items as item, index}
+		<li
+			class="row"
+			draggable="true"
+			on:dragstart={(event) => dragStart(event, index)}
+		>
 			<div class="left" />
 			<div class="right">
 				<p class="name">{item.name}</p>
 				<p class="price">${item.price}</p>
 			</div>
-		</div>
+		</li>
 	{/each}
 
 	<!-- Empty rows if not enough items -->

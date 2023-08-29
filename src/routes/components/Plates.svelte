@@ -1,7 +1,7 @@
 <script>
 	import Person from "$lib/Person.js";
 	export let people;
-	export let selectedPerson;
+	export let target;
 
 	function addPerson() {
 		const name = prompt("Enter new person's name:");
@@ -11,7 +11,7 @@
 	}
 
 	function selectPerson(id) {
-		selectedPerson = people[id];
+		target = people[id];
 	}
 </script>
 
@@ -52,7 +52,7 @@
 		min-height: $length;
 		max-height: $length;
 		border-radius: 50%;
-		background-color: theme.$azure;
+		background-color: theme.$beige;
 
 		p {
 			position: absolute;

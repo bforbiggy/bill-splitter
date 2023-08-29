@@ -1,20 +1,43 @@
 <script>
 	import "./Check.scss";
+	import Person from "$lib/Person.js";
 
-	export let selectedPerson;
+	function drop(event) {
+		event.preventDefault();
+		if (target === Person.Nobody) return;
+
+		const data = event.dataTransfer.getData("text/plain");
+		const item = items[parseInt(data)];
+
+		if (!target.items.includes(item)) {
+			target.items.push(item);
+			item.people.push(target);
+		}
+		target = target;
+	}
+
+	export let target;
+	export let items;
 </script>
 
-<div class="check">
+<div
+	class="check"
+	on:dragenter={() => {}}
+	on:dragleave={() => {}}
+	on:drop={drop}
+	ondragover="return false"
+	role="group"
+>
 	<!-- Top row of bill -->
 	<div class="header row">
 		<div class="left" />
 		<div class="right">
-			<p>{selectedPerson.name}'s Bill</p>
+			<p>{target.name}'s Bill</p>
 		</div>
 	</div>
 
 	<!-- Bill's items -->
-	{#each selectedPerson.items as item}
+	{#each target.items as item}
 		<div class="row">
 			<div class="left" />
 			<div class="right">
@@ -25,8 +48,8 @@
 	{/each}
 
 	<!-- Empty rows if not enough items -->
-	{#if selectedPerson.items.length < 13}
-		{#each Array(13 - selectedPerson.items.length) as _}
+	{#if target.items.length < 13}
+		{#each Array(13 - target.items.length) as _}
 			<div class="row">
 				<div class="left" />
 				<div class="right" />

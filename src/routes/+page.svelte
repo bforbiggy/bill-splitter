@@ -2,18 +2,18 @@
 	import Plates from "./components/Plates.svelte";
 	import Check from "./components/TableCheck.svelte";
 	import PersonCheck from "./components/PersonCheck.svelte";
-	import Item from "$lib/Item.js";
 	import Person from "$lib/Person.js";
+	import Item from "$lib/Item.js";
 
-	let people = [];
-	let items = [];
+	let people = [new Person("kev")];
+	let items = [new Item("food", 5.0)];
 
-	let selectedPerson = new Person("Nobody");
+	let target = Person.Nobody;
 </script>
 
 <div class="main">
-	<Plates bind:people bind:selectedPerson />
-	<PersonCheck bind:selectedPerson />
+	<Plates bind:people bind:target />
+	<PersonCheck bind:target bind:items />
 	<Check bind:items />
 </div>
 
@@ -28,7 +28,7 @@
 		max-height: 100vh;
 		overflow: hidden;
 
-		background-color: theme.$ash;
+		background-color: theme.$ecru;
 		justify-content: space-evenly;
 		vertical-align: top;
 	}

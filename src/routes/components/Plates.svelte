@@ -1,6 +1,7 @@
 <script>
 	import Person from "$lib/Person.js";
 	export let people;
+	export let selectedPerson;
 
 	function addPerson() {
 		const name = prompt("Enter new person's name:");
@@ -8,11 +9,15 @@
 		people.push(new Person(name));
 		people = people;
 	}
+
+	function selectPerson(id) {
+		selectedPerson = people[id];
+	}
 </script>
 
 <div id="plates">
 	{#each people as person, index}
-		<button class="plate" id={`plate ${index}`}>
+		<button class="plate" on:click={() => selectPerson(index)}>
 			<p>{person.name}</p>
 		</button>
 	{/each}

@@ -1,4 +1,5 @@
 <script>
+	import "./Check.scss";
 	import Item from "$lib/Item.js";
 
 	export let items;
@@ -23,6 +24,7 @@
 		<div class="left" />
 		<div class="right">
 			<p>Bill</p>
+			<button class="row" on:click={addItem}>+</button>
 		</div>
 	</div>
 
@@ -38,21 +40,14 @@
 	{/each}
 
 	<!-- Empty rows if not enough items -->
-	{#if items.length < 12}
-		{#each Array(12 - items.length) as _}
+	{#if items.length < 13}
+		{#each Array(13 - items.length) as _}
 			<div class="row">
 				<div class="left" />
 				<div class="right" />
 			</div>
 		{/each}
 	{/if}
-
-	<button class="row" on:click={addItem}>
-		<div class="left" />
-		<div class="right">
-			<p>ADD ITEM</p>
-		</div>
-	</button>
 
 	<!-- Bottom row of bill -->
 	<div class="header row">
@@ -62,53 +57,8 @@
 </div>
 
 <style lang="scss">
-	.check {
-		.row {
-			display: flex;
-			font-size: 2em;
-			text-align: left;
-			border-bottom: 2px cornflowerblue solid;
-
-			.left {
-				width: 5rem;
-				height: 3rem;
-				background-color: aliceblue;
-				border-right: 2px red solid;
-			}
-
-			.right {
-				width: 28rem;
-				height: 3rem;
-				background-color: aliceblue;
-				display: flex;
-
-				p {
-					margin: 0;
-					display: flex;
-					align-content: center;
-					justify-content: space-between;
-					height: 100%;
-				}
-
-				.name {
-					width: 100%;
-				}
-			}
-		}
-
-		// Custom sizes for header
-		.header {
-			.left {
-				height: 3.5rem;
-			}
-
-			.right {
-				height: 3.5rem;
-			}
-		}
-
-		button {
-			all: unset;
-		}
+	button {
+		position: absolute;
+		right: 0px;
 	}
 </style>

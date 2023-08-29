@@ -1,0 +1,50 @@
+.check {
+	.row {
+		display: flex;
+		font-size: 2em;
+		text-align: left;
+		border-bottom: 2px cornflowerblue solid;
+
+		.left {
+			width: 5rem;
+			height: 3rem;
+			background-color: aliceblue;
+			border-right: 2px red solid;
+		}
+
+		.right {
+			width: 28rem;
+			height: 3rem;
+			background-color: aliceblue;
+			display: flex;
+			position: relative;
+
+			p {
+				margin: 0;
+				display: flex;
+				align-content: center;
+				justify-content: space-between;
+				height: 100%;
+			}
+
+			.name {
+				width: 100%;
+			}
+		}
+	}
+
+	// Custom sizes for header
+	.header {
+		.left {
+			height: 3.5rem;
+		}
+
+		.right {
+			height: 3.5rem;
+		}
+	}
+
+	button {
+		all: unset;
+	}
+}

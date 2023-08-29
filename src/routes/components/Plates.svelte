@@ -13,11 +13,13 @@
 <div id="plates">
 	{#each people as person, index}
 		<button class="plate" id={`plate ${index}`}>
-			{person.name.slice(0, 2)}
+			<p>{person.name}</p>
 		</button>
 	{/each}
 
-	<button class="plate" id="ADD" on:click={addPerson}>+</button>
+	<button class="plate" id="ADD" on:click={addPerson}>
+		<p>+</p>
+	</button>
 </div>
 
 <style lang="scss">
@@ -36,16 +38,28 @@
 	}
 
 	.plate {
-		$length: min(12vh, 12vw);
+		position: relative;
+		margin: 30px;
+
+		$length: 12rem;
 		min-width: $length;
 		max-width: $length;
 		min-height: $length;
 		max-height: $length;
 		border-radius: 50%;
-
-		position: relative;
-		margin: 30px;
 		background-color: theme.$azure;
-		font-size: 4em;
+
+		p {
+			position: absolute;
+			left: 0;
+			top: 25%;
+			width: 100%;
+			height: 100%;
+			font-size: 2rem;
+
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
 	}
 </style>

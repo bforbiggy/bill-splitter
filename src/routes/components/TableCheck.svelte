@@ -2,10 +2,10 @@
 	import "./Check.scss";
 	import Item from "$lib/Item.js";
 
-	function getTotal() {
-		let total = 0;
+	let total = 0;
+	$: {
+		total = 0;
 		for (let item of items) total += item.price;
-		return total;
 	}
 
 	function addItem() {
@@ -48,7 +48,7 @@
 			<div class="left" />
 			<div class="right">
 				<p class="name">{item.name}</p>
-				<p class="price">${item.price}</p>
+				<p class="price">${item.price.toFixed(2)}</p>
 			</div>
 		</li>
 	{/each}
@@ -67,7 +67,7 @@
 	<div class="header row">
 		<div class="left" />
 		<div class="right">
-			Total: ${getTotal().toFixed(2)}
+			Total: ${total.toFixed(2)}
 		</div>
 	</div>
 </div>

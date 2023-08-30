@@ -4,6 +4,16 @@ class Item {
 		this.price = price;
 		this.people = people;
 	}
+
+	addPerson(person) {
+		if (this.people.includes(person))
+			return;
+		this.people.push(person);
+	}
+
+	splitPrice() {
+		return this.price / this.people.length;
+	}
 }
 
 export default Item;

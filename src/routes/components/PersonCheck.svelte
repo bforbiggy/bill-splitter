@@ -8,8 +8,8 @@
 		const data = event.dataTransfer.getData("text/plain");
 		const item = items[parseInt(data)];
 
-		if (!target.items.includes(item)) target.items.push(item);
-		if (!item.people.includes(target)) item.people.push(target);
+		target.addItem(item);
+		item.addPerson(target);
 		target = target;
 	}
 
@@ -39,7 +39,7 @@
 			<div class="left" />
 			<div class="right">
 				<p class="name">{item.name} (${item.price.toFixed(2)})</p>
-				<p class="price">{(item.price / item.people.length).toFixed(2)}</p>
+				<p class="price">${item.splitPrice().toFixed(2)}</p>
 			</div>
 		</div>
 	{/each}
@@ -57,6 +57,9 @@
 	<!-- Bottom row of bill -->
 	<div class="header row">
 		<div class="left" />
-		<div class="right" />
+		<div class="right">
+			<p>Total:</p>
+			<p>${target.getTotal().toFixed(2)}</p>
+		</div>
 	</div>
 </div>

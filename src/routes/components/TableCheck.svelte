@@ -2,6 +2,12 @@
 	import "./Check.scss";
 	import Item from "$lib/Item.js";
 
+	function getTotal() {
+		let total = 0;
+		for (let item of items) total += item.price;
+		return total;
+	}
+
 	function addItem() {
 		// Retrieve user input for item
 		const name = prompt("Enter item name:");
@@ -60,7 +66,9 @@
 	<!-- Bottom row of bill -->
 	<div class="header row">
 		<div class="left" />
-		<div class="right" />
+		<div class="right">
+			Total: ${getTotal().toFixed(2)}
+		</div>
 	</div>
 </div>
 

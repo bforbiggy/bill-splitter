@@ -5,8 +5,10 @@
 	import Person from "$lib/Person.js";
 	import Item from "$lib/Item.js";
 
-	let people = [new Person("kevin"), new Person("biggy")];
-	let items = [new Item("Ajisen Ramen", 5.0), new Item("Coke", 1.0)];
+	// let people = [new Person("kevin"), new Person("biggy")];
+	// let items = [new Item("Ajisen Ramen", 5.0), new Item("Coke", 1.0)];
+	let people = [];
+	let items = [];
 
 	let target = Person.Nobody;
 </script>

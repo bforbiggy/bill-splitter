@@ -6,8 +6,10 @@
 	function addPerson() {
 		const name = prompt("Enter new person's name:");
 		if (!name) return;
-		people.push(new Person(name));
-		people = people;
+
+		const person = new Person(name);
+		people = [...people, person];
+		target = person;
 	}
 
 	function selectPerson(id) {
